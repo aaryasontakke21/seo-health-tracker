@@ -79,9 +79,10 @@ html_content = template.render(
 )
 
 # Email settings — fill in your details below
-SENDER_EMAIL = "aaryasontakke.work@gmail.com"
-SENDER_PASSWORD = "fshdzpdtqebjnkjl"
-RECEIVER_EMAIL = "aaryasontakke.work@gmail.com"
+import os
+SENDER_EMAIL = os.environ.get("SENDER_EMAIL", "aaryasontakke.work@gmail.com")
+SENDER_PASSWORD = os.environ.get("SENDER_PASSWORD", "fshdzpdtqebjnkjl")
+RECEIVER_EMAIL = os.environ.get("RECEIVER_EMAIL", "aaryasontakke.work@gmail.com")
 
 # Build the email
 print("Building email...")
