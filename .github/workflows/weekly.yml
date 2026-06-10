@@ -26,6 +26,9 @@ jobs:
         run: |
           echo '${{ secrets.GOOGLE_CREDENTIALS }}' > credentials.json
 
+      - name: Upload crawl data to Google Sheets
+        run: python3 upload_to_sheets.py
+
       - name: Run scorer
         run: python3 scorer.py
 
