@@ -1,7 +1,7 @@
 # 🔍 Automated SEO Health Tracker
 
 A Python-based automation that crawls a website weekly, scores every page 
-on 5 core SEO signals, and emails a plain-English fix list automatically — 
+on 5 core SEO signals, and emails a plain-English fix list automatically : 
 no dashboard, no login required.
 
 ---
