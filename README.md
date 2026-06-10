@@ -51,6 +51,8 @@ The automated email shows:
 
 *(See screenshot below)*
 
+<img width="733" height="561" alt="Screenshot 2026-06-10 at 7 16 35 PM" src="https://github.com/user-attachments/assets/b1acd726-dcf9-48c9-a7cc-8833b56b7f17" />
+
 ---
 
 ## 🛠️ Tech Stack
