@@ -1,7 +1,7 @@
 # 🔍 Automated SEO Health Tracker
 
 A Python-based automation that crawls a website weekly, scores every page 
-on 5 core SEO signals, and emails a plain-English fix list automatically — 
+on 5 core SEO signals, and emails a plain-English fix list automatically : 
 no dashboard, no login required.
 
 ---
@@ -50,6 +50,8 @@ The automated email shows:
 - Top 5 pages that need fixing with plain-English descriptions
 
 *(See screenshot below)*
+
+<img width="733" height="561" alt="Screenshot 2026-06-10 at 7 16 35 PM" src="https://github.com/user-attachments/assets/b1acd726-dcf9-48c9-a7cc-8833b56b7f17" />
 
 ---
 
