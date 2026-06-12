@@ -67,23 +67,25 @@ The automated email shows:
 | smtplib | Email delivery via Gmail SMTP |
 | Google Cloud | Service account authentication |
 | GitHub Actions | Weekly automation schedule |
+| requests | Fetches web pages for crawling |
+| BeautifulSoup | Parses HTML to extract SEO data |
 
 ---
 
 ## 🏗️ How It Works
-Screaming Frog crawl
-↓
-Export CSV → pushed to GitHub
-↓
+```
 GitHub Actions triggers every Monday 8am
-↓
+        ↓
+crawler.py → crawls the site using requests + BeautifulSoup
+        ↓
 upload_to_sheets.py → writes crawl data to Google Sheets
-↓
+        ↓
 scorer.py → scores every page, writes results to Scores tab
-↓
+        ↓
 send_report.py → builds HTML email, sends via Gmail SMTP
-↓
-📧 Report lands in inbox---
+        ↓
+📧 Report lands in inbox automatically — zero manual steps
+```
 
 ## 📁 Project Structureseo-tracker/
 ├── upload_to_sheets.py    # Pushes crawl CSV to Google Sheets
@@ -95,6 +97,7 @@ send_report.py → builds HTML email, sends via Gmail SMTP
 │   └── workflows/
 │       └── weekly.yml     # GitHub Actions automation schedule
 └── .gitignore             # Keeps credentials.json off GitHub---
+├── crawler.py             # Crawls the website using requests + BeautifulSoup
 
 ## 🚀 How To Run This Yourself
 
@@ -114,14 +117,10 @@ send_report.py → builds HTML email, sends via Gmail SMTP
 7. Add your Gmail credentials to the script
 8. Run `python3 test_connection.py` to verify setup
 
-### To Update Crawl Data
-1. Run a new crawl in Screaming Frog
-2. Export as `crawl_export.csv` to the project folder
+### To Track a Different Website
+1. Open `crawler.py`
+2. Change the `START_URL` variable to the website you want to track
 3. Push to GitHub:
-git add crawl_export.csv
-git commit -m "Update crawl data"
-git push
-GitHub Actions handles the rest automatically.
 
 ---
 
