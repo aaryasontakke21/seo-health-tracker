@@ -20,11 +20,14 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install gspread pandas google-auth google-auth-oauthlib jinja2
+          pip install gspread pandas google-auth google-auth-oauthlib jinja2 beautifulsoup4 requests
 
       - name: Create credentials file
         run: |
           echo '${{ secrets.GOOGLE_CREDENTIALS }}' > credentials.json
+
+      - name: Run crawler
+        run: python3 crawler.py
 
       - name: Upload crawl data to Google Sheets
         run: python3 upload_to_sheets.py
